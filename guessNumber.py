@@ -1,9 +1,10 @@
 # This is a program that allows you to guess a correct number
-def guessNumber():   
-  levels = ['easy','medium','hard']
-  boundary = [1,10,20,50]
-  guessess = [6,4,3]
-  print('Welcome to Number Guesser game.\nThere are 3 levels; Easy,Medium and Hard.\nPlease enter the level you want to play')
+def guessNumber():
+  # Introduction
+  print('Welcome to Number Guesser game.\nThere are 3 levels; Easy,Medium and Hard.\nPlease enter the level you want to play')   
+  levels = ['easy','medium','hard'] #game mode
+  boundary = [1,10,20,50] #random generators
+  guessess = [6,4,3] #availble guess numbers  
   level = input("Please enter the level here: ")
   # check for easy mode
   if(level.lower() == levels[0]):    
@@ -11,16 +12,19 @@ def guessNumber():
     minimum = boundary[0]
     maximum = boundary[1]
     displayResult(guessCount,minimum,maximum)
+  # check for medium mode
   elif(level.lower() == levels[1]):
     guessCount = guessess[1]
     minimum = boundary[0]
     maximum = boundary[2]
     displayResult(guessCount,minimum,maximum)
+  # check for hard mode
   elif(level.lower() == levels[2]):
     guessCount = guessess[2]
     minimum = boundary[0]
     maximum = boundary[3]
     displayResult(guessCount,minimum,maximum)
+  # check for wrong mode
   else:
     print('Please try again by entering level mode')
 
